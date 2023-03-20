@@ -23,8 +23,8 @@ public class MyBotonera extends JPanel {
 	private int turno;
 	private int numeroTablero;
 	private int moverFicha; 
-
-	public MyBotonera(MyLabelVictory myLabelVictory) {
+	
+	public MyBotonera(MyLabelVictory myLabelVictor) {
 		this.myLabelVictory = myLabelVictory;
 		crearBotones();
 		moverFicha = 0;
@@ -38,10 +38,13 @@ public class MyBotonera extends JPanel {
 				botonera[i][j].addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
-
+						
 						MyBoton boton = (MyBoton) e.getSource();
+						
+						
 						if (gestionDatosPartida.getTurno() < 6 ) { 
 							colocarFichas(boton);
+
 							
 						}
 						else if (gestionDatosPartida.getTurno() >= 6) {
@@ -202,5 +205,7 @@ public class MyBotonera extends JPanel {
 	public void cogerPosicionNueva(MyBoton boton) {
 		gestionDatosPartida.setPosicionNueva(boton.getCoordenada());
 	}
+
+	
 
 }

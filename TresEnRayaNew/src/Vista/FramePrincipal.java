@@ -17,6 +17,8 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.Color;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.CompoundBorder;
 
 public class FramePrincipal extends JFrame {
 
@@ -53,6 +55,8 @@ public class FramePrincipal extends JFrame {
 		contentPane.add(panelBotones);
 		panelBotones.setLayout(new GridLayout(0, 1, 0, 0));
 
+		
+
 		lblMensajeVictori = new MyLabelVictory("");
 		lblMensajeVictori.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMensajeVictori.setFont(new Font("Source Serif Pro", Font.PLAIN, 34));
@@ -60,6 +64,8 @@ public class FramePrincipal extends JFrame {
 		panelBotones.add(lblMensajeVictori);
 
 		panelTresEnRaya = new MyBotonera(lblMensajeVictori);
+		panelTresEnRaya.setBorder(new CompoundBorder(new EmptyBorder(0, 0, 0, 0), null));
+		panelTresEnRaya.setForeground(new Color(0, 0, 64));
 		contentPane.add(panelTresEnRaya);
 		panelTresEnRaya.setLayout(new GridLayout(3, 3, 4, 3));
 
